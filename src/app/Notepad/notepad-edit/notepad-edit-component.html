@@ -1,11 +1,11 @@
 <div *ngIf="selectedNote$ | async as note">
   <mat-form-field class="header">
-      <textarea matInput #titleInput placeholder="Title" (keyup)="onChangeTitle(note, titleInput.value)">{{note.title}}</textarea>
+      <textarea matInput #titleInput placeholder="Title" (keyup)="onChangeTitle(note, titleInput.value)" value="{{note.title}}"></textarea>
   </mat-form-field>
   <button class="trash-button" (click)="onDelete(note.id)">
     <mat-icon class="trash">delete</mat-icon>
   </button>
-  <textarea #contentInput class="content" placeholder="Content..." (keyup)="onChangeContent(note, contentInput.value)">{{note.content}}</textarea>
+  <textarea #contentInput class="content" placeholder="Content..." (keyup)="onChangeContent(note, contentInput.value)" value="{{note.content}}"></textarea>
 </div>
 
 
