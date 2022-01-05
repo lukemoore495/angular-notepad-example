@@ -1,1 +1,19 @@
-/* You can add global styles to this file, and also import other style files */
+@use '@angular/material' as mat;
+@import 'styles/colors.scss';
+@include mat.core();
+
+$notepad-theme: mat.define-light-theme((
+  color: (
+    primary: $notepad-primary,
+    accent: $notepad-accent,
+    warn: $notepad-warn,
+  )
+));
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include mat.all-component-themes($notepad-theme);
+
+html, body { height: 100%; background-color: map-get($map: $notepad-primary, $key: 100); }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

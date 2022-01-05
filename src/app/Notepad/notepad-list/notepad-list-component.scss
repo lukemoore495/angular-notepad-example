@@ -1,0 +1,21 @@
+.search{
+  display: inline-block;
+  padding-right: 100px;
+}
+
+.create{
+  display: inline-block;
+}
+
+mat-selection-list {
+  max-height: 500px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding-right: 2px;
+}
+
+mat-selection-list mat-list-option{
+  height: 80px;
+  border: 1px solid;
+  border-radius: 0px;
+}

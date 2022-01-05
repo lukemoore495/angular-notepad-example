@@ -1,0 +1,34 @@
+@import '/src/styles/colors.scss';
+
+:host {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 20px;
+    grid-template-areas: 
+        "header"
+        "noteList"
+}
+
+@media (min-width: 800px) {
+    :host {
+        grid-template-columns: 1fr 2fr;
+        grid-template-areas: 
+            "header header"
+            "noteList notepadEdit";
+    }
+}
+
+.header {
+    grid-area: header;
+    background-color: map-get($notepad-accent, 100);
+}
+
+.notepad-list {
+    grid-area: noteList;
+    background-color: map-get($notepad-accent, 100);
+}
+
+.notepad-edit {
+    background-color: map-get($notepad-accent, 100);
+}

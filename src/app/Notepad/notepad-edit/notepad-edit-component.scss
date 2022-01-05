@@ -1,0 +1,48 @@
+:host {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 20px;
+    grid-template-areas: 
+        "header"
+        "content"
+        "trashButton";
+}
+
+@media (min-width: 800px) {
+    :host {
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: 
+            "header trashButton"
+            "content content";
+    }
+}
+
+textarea { 
+    max-width: 100%; 
+    max-height: 100%; 
+}
+
+.header {
+    grid-area: header;
+    padding-right: 50px;
+    width:900px;
+    font-size: 25px;
+}
+
+.content {
+    grid-area: content;
+    height: 400px;
+    width:1000px;
+}
+
+.trash {
+    transform: scale(2);
+ }
+
+ .trash-button{
+     grid-area: trashButton;
+     border: none;
+     background: none;
+     display: inline-block;
+ }

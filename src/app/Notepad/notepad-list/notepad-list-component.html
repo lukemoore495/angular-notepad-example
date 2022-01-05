@@ -1,0 +1,18 @@
+<div class="search">
+    <search placeholder="Search"
+            (searchFilterChanged)="searchChanged($event)"></search>
+</div>
+<create-button class="create" name="Create new" (create)="createNote()"></create-button>
+<mat-selection-list #noteList
+    [multiple]="false"
+    (selectionChange)="onChange(noteList.selectedOptions.selected[0].value)"
+    *ngIf="notes$ | async as notes">
+    <div class="list-item" *ngFor="let note of notes | searchFilter: searchTerm">
+        <mat-list-option [value]="note">
+            <div> 
+                <b>{{note.title}}</b>
+                <p>{{(note.content | slice: 0: 65) + '...'}}</p>
+            </div>
+        </mat-list-option>
+    </div>
+</mat-selection-list>
